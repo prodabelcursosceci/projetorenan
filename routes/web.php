@@ -23,6 +23,7 @@ Route::get('/phpinfo', function () {
     phpinfo();
 });
 
-Route::get(' /helloworld ', "TesteController@index");
+Route::get(' /index1 ', "TesteController@index");
+Route::post(' /index1 ', "TesteController@indexPost");
 
-Route::get('/helloworld/{nome}' , "TesteController@index2");
+Route::get('/index2/{nome}/{idade?}' , "TesteController@index2");
