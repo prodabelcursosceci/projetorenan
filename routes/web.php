@@ -22,8 +22,12 @@ Route::get('/about', function () {
 Route::get('/phpinfo', function () {
     phpinfo();
 });
+//Route::middleware('checkage')->group(function() {
+    Route::get(' /index1 ', "TesteController@index");
+    Route::post(' /index1 ', "TesteController@indexPost");
+    Route::get('/index2/{nome}/{idade?}' , "TesteController@index2");
+//});
 
-Route::get(' /index1 ', "TesteController@index");
-Route::post(' /index1 ', "TesteController@indexPost");
+Auth::routes();
 
-Route::get('/index2/{nome}/{idade?}' , "TesteController@index2");
+Route::get('/home', 'HomeController@index')->name('home');

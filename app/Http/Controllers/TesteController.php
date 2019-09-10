@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Validator;
 
 class TesteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkage');
+        $this->middleware('throttle:1,1');
+    }
+
     public function index(Request $req)
     {
         $validator = Validator::make($req->all(), [
